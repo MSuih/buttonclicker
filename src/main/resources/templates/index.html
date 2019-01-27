@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Button Clicker!</title>
+        <link rel="stylesheet" type="text/css" href="../public/style.css" th:href="@{/style.css}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+        <script src="../public/clicker.js" th:src="@{/clicker.js}"></script>
+    </head>
+    <body ng-app="buttonClicker" ng-controller="clickController">
+        <div id="content">
+            <span class="title">Button Clicker</span>
+
+            <span>You are player {{model.playerName}}</span>
+            <button ng-click="actions.sendClick()">Click me!</button>
+            <span ng-show="model.clicksShown">{{model.clickCount}} clicks are needed to win a price</span>
+
+            <table ng-show="model.winners.length > 1">
+                <caption>Last winners: </caption>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Time</th>
+                </tr>
+                <tr ng-repeat="winner in model.winners">
+                    <td ng-bind="winner.name"></td>
+                    <td ng-bind="winner.price"></td>
+                    <td>{{winner.time | date:"yyyy/MM/dd HH:mm:ss"}}</td>
+                </tr>
+            </table>
+        </div>
+        <div id="message" ng-show="model.messageShown">
+            <a href="" ng-click="model.messageShown=false">X</a>
+            <span ng-bind="model.messageText"></span>
+        </div>
+    </body>
+</html>

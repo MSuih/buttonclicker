@@ -1,0 +1,68 @@
+body {
+    background: #d5ecff;
+    color: black;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+div {
+    margin: 30px auto;
+    max-width: 800px;
+    background: white;
+    border: 3px solid #bfbfbf;
+    border-radius: 25px;
+    padding: 15px;
+    text-align: center;
+}
+
+.title {
+    display: block;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+}
+
+button {
+    display: block;
+    margin: 0 auto 0.3em auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0.5em auto;
+}
+
+th {
+    background-color: #bbcbff;
+}
+
+tr:not(:last-of-type):not(:first-of-type) {
+    border-bottom: 1px solid #3e3e3e;
+}
+
+th, td {
+    padding: 0.1em 0.2em;
+}
+
+div.success {
+    border-color: #97ff98;
+}
+
+div.error {
+    border-color: #ffada5;
+}
+
+#message {
+    max-width: 600px;
+    position: fixed;
+    top: 5px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+#message a {
+    position: absolute;
+    text-decoration: none;
+    top: 8px;
+    right: 8px;
+}
